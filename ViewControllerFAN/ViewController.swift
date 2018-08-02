@@ -1,7 +1,7 @@
 import UIKit
 import FBAudienceNetwork
 
-class ViewController: UIViewController, FBNativeAdDelegate {
+class ViewController: UIViewController, FBNativeAdDelegate, FBMediaViewDelegate {
     
     
     @IBOutlet weak var adplace: UIView!
@@ -19,17 +19,28 @@ class ViewController: UIViewController, FBNativeAdDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fbNativeAd = FBNativeAd(placementID: "VID_HD_16_9_46S_APP_INSTALL#573525062847749_849997161867203")
+        fbNativeAd = FBNativeAd(placementID: "VID_HD_16_9_46S_APP_INSTALL#573525062847749_804379939762259")
         fbNativeAd.delegate = self
         
         fbNativeAd.loadAd()
-        
+    }
+    
+    
+    func mediaViewDidLoad(_ mediaView: FBMediaView) {
+        print("im here!")
+        let currentAspect = mediaView.frame.size.width / mediaView.frame.size.height
+        print("current aspect of media view: \(currentAspect)")
+        let actualAspect = mediaView.aspectRatio
+        print("actual aspect of media view: \(actualAspect)")
     }
     
     func nativeAdDidLoad(_ nativeAd: FBNativeAd) {
         self.fbNativeAd = nativeAd
+        self.adCoverMediaView.delegate = self
         self.showNativeAd()
     }
+    
+    
     
     func showNativeAd() {
         if ((fbNativeAd != nil) && self.fbNativeAd.isAdValid) {
@@ -41,7 +52,6 @@ class ViewController: UIViewController, FBNativeAdDelegate {
             self.adCallToActionButton.setTitle(self.fbNativeAd.callToAction, for: .normal)
             self.adChoicesView.nativeAd = self.fbNativeAd
             self.adChoicesView.corner = .topRight
-            
         }
     }
 

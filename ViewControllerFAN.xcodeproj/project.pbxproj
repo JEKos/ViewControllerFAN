@@ -25,6 +25,7 @@
 		A147323C211196DF00D3D847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A147323F211196DF00D3D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1473241211196DF00D3D847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19002222111B5A800DB5156 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A3D26CAFEF9E30F15348A948 /* Pods-ViewControllerFAN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewControllerFAN.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewControllerFAN/Pods-ViewControllerFAN.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +75,7 @@
 		B23A9AAE27CA5C0B83D0FEEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A19002222111B5A800DB5156 /* WebKit.framework */,
 				3926A101C5EEDFBD72E4A244 /* Pods_ViewControllerFAN.framework */,
 			);
 			name = Frameworks;
